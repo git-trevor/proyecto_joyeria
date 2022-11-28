@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand cambioColor" href="/">Joyería Rubí</a>
+    {{!-- <i class="navbar-brand bx bx-phone-call bx-tada-hover bx-xs" style="color:#ffffff"></i> --}}
+    {{!-- <i class='bx bxl-whatsapp bx-tada' style='color:#11d531; font-size: 35px;'></i> --}}
+    {{!-- <a class="navbar-brand cambioColor" href="https://wa.me/+524941000057" style="font-size: 15px;">Contacto: 494 100 0057</a> --}}
+    <a class="navbar-brand cambioColor" href="https://wa.me/+524941000057"><i class='bx bxl-whatsapp bx-tada' style='color:#11d531; font-size: 35px;'></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      {{#if usuario}}
+        {{#unless usuario.type}}
+          <li class="nav-item">
+            <small class="text-white"><a><i class="far fa-user"></i> Usuario: {{usuario.nombre}} (Administrador)</a></small>
+          </li>
+        {{else}}
+        <li class="nav-item">
+          <small class="text-white"><a><i class="far fa-user"></i> Usuario: {{usuario.nombre}}</a></small>
+        </li>
+        {{/unless}}
+      {{else}}
+        <li class="nav-item">
+        </li>
+      {{/if}}
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {{#if usuario}}
+          {{#unless usuario.type}}
+            {{!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="navbarDropdownUsers"><i class="fas fa-users"></i><small> Usuarios</small></a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fas fa-user-friends"></i> Lista de Usuarios</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fas fa-user-plus"></i> Agregar Usuario</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/notes/add"><i class="fa-regular fa-heart"></i> Agregar Joyas</a>
+                </li>
+              </ul>
+            </li> --}}
+          {{/unless}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bx bx-list-ul"></i> <small> Menú</small>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/notas"><i class="far fa-file-alt"></i> Listar Joyas</a></li>
+              <li><a class="dropdown-item" href="/notes/search"><i class="bx bx-search-alt-2"></i> Buscar Joya</a></li>
+              {{#unless usuario.type}}
+                <li><a class="dropdown-item" href="/notes/add"><i class='bx bxs-file-plus bx-flip-horizontal bx-tada' style='color:#a41111'></i> Agregar Joyas</a></li>
+              {{/unless}}
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/users/logout"><i class="bx bx-log-out-circle"></i> Salir</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><i class="far fa-question-circle"></i><small> Info</small></a>
+          </li>
+        {{else}}
+          <li class="nav-item"> 
+            {{!-- <a class="nav-link" href="/users/singin"><i class="fas fa-sign-in-alt"></i> Iniciar</a> --}}
+            <a class="nav-link" href="/users/singin"><i class='bx bxs-user-rectangle bx-flip-horizontal' style='color:#ffffff'></i> Iniciar</a>
+          </li>
+          <li class="nav-item"> 
+            {{!-- <a class="nav-link" href="/users/singup"><i class="fas fa-user-push"></i> Registrar</a> --}}
+            <a class="nav-link" href="/users/singup"><i class="bx bxs-user-plus"></i> Registrar</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

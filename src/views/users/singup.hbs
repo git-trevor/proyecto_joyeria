@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">Registro de usuarios</div>
+            <div class="card-body">
+                <form action="/users/singup" method="POST">
+                    <div class="form group mb-3">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Introduzca su nombre" value="{{nombre}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="pais">País:</label>
+                        <input type="text" name="pais" class="form-control" placeholder="Introduzca su país de residencia" value="{{pais}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="estado">Estado:</label>
+                        <input type="text" name="estado" class="form-control" placeholder="Introduzca su estado de residencia" value="{{estado}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="municipio">Municipio:</label>
+                        <input type="text" name="municipio" class="form-control" placeholder="Introduzca su municipio de residencia" value="{{municipio}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="calle">Calle:</label>
+                        <input type="text" name="calle" class="form-control" placeholder="Introduzca el nombre de su calle" value="{{calle}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="no_ext">Número exterior:</label>
+                        <input type="text" name="no_ext" class="form-control" placeholder="Introduzca el número exterior" value="{{no_ext}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="no_int">Número interior:</label>
+                        <input type="text" name="no_int" class="form-control" placeholder="Introduzca el número interior" value="{{no_int}}">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Email">Email:</label>
+                        <input type="email" name="email" class="form-control" placeholder="Introduzca su email" value="{{email}}">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" class="form-control" placeholder="Introduzca su contraseña" value="{{password}}">
+                    </div>
+                    <div class="form group mb-3">
+                        <label for="passwordAut">Confirmar Password:</label>
+                        <input type="password" class="form-control" name="passwordAut" placeholder="Confirmar password" value="{{passwordAut}}">
+                    </div>
+                    <div class="form-group mb-3 d-grid gap-2">
+                        <input type="submit" class="btn btn-secondary" value="Registrar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

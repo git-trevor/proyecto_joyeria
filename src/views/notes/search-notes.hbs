@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="navbar-nav mr-auto ml-4 mb-4">
+            <form class="form-inline my-2 my-lg-0" method="post" action="/notes/search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar Joyas" name="search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+        {{#if search}}
+            <div class="navbar-nav ml-auto ml-4 mb-4">
+                <h5>Resultado de la busqueda: <span class="badge badge-pill badge-secondary">{{search}}</span></h5>
+            </div>
+        {{/if}}
+    </div>
+    {{#if search}}
+        <div class="row">
+            {{#each notes}}
+                <div class="col-md-4">
+                    <div class="card text-dark bg-light border-secondary mb-3">
+                        <div class="card-header footer d-flex justify-content-between">
+                            <p class="card-title fs-4">{{titulo}}</p>
+                        </div>
+                        <img src="/img/{{imagen}}" class="rounded-square mx-auto d-block m-2 img" alt="img">
+                        <div class="card-body footer">
+                            <p><h6>Precio:</h6>${{precio}}.00 MX 
+                                <a href="https://www.facebook.com/people/Arracadas-Jerezanas-Joyer%C3%ADa-Rubi/100057530946181/">
+                                    <i class="fa-regular fa-handshake ms-3 fa-2xl"></i>
+                                </a>
+                            </p>
+                            <p><h6>Descripcion:</h6>{{descripcion}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">No hay resultados</h4>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
